@@ -1,182 +1,147 @@
-# marborz.one — Portfolio Redesign 2026
+# marborz.one — Personlig portefølje
 
-Et fullstack porteføljenettsted som viser frem ingeniørtenkning og arkitektur fremfor kodevisning.
+Personlig porteføljeside. Bygget fra bunnen av mens jeg lærte fullstack-utvikling — begynte å kode i mai 2025.
 
-**Live:** [marborz.one](http://marborz.one)
-
----
-
-## 🎯 Prosjektmål
-
-Bygge en junior+ nivå portefølje som demonstrerer:
-- Ren arkitektur og komponentdesign
-- Typesikker frontend med TypeScript
-- Riktig tilstandshåndtering og i18n
-- Forståelse av avveininger og designbeslutninger
-
-Ikke bare "Jeg kan kode" — men "Jeg forstår hvorfor kode er bygget slik."
+**Live:** [marborz.one](https://marborz.one)
 
 ---
 
-## 🛠️ Stack
+## Stack
 
-**Frontend:**
-- **Vite** — Raskt byggeverktøy
-- **React 19** — Nyeste med hooks
-- **TypeScript** — Typesikkerhet
-- **React Router DOM** — Klient-side routing
-- **react-i18next** — Internasjonalisering (EN, RU, NO)
-- **react-hook-form** — Skjemahåndtering
-- **Framer Motion** — Animasjoner
-- **Sass** — CSS-preprosessor
-
-**Backend:**
-- **Express** — API-server
-- **Resend** — E-postlevering
-- **Node.js** — Runtime
+| Lag | Teknologi |
+|---|---|
+| Rammeverk | React 19 + TypeScript |
+| Byggverktøy | Vite |
+| Styling | SCSS Modules + CSS custom properties (design tokens) |
+| Ruting | React Router DOM |
+| Animasjoner | Framer Motion (kun desktop) |
+| i18n | react-i18next (EN / RU / NO) |
+| Skjemaer | react-hook-form |
+| Backend | Express + Resend (e-postlevering fra kontaktskjema) |
+| Deploy | Vercel |
 
 ---
 
-## 📁 Prosjektstruktur
+## Prosjektstruktur
 
 ```
 src/
-├── components/          # Gjenbrukbare React-komponenter
+├── assets/
+│   ├── project_images/      # Skjermbilder av prosjekter
+│   └── project_videos/      # Skjermopptak av prosjekter
+├── components/
 │   ├── Header.tsx
 │   ├── Footer.tsx
-│   ├── Layout.tsx
-│   ├── ProjectModal.tsx
-│   └── skeletons/       # Lasting-skjeletter
-├── pages/               # Sidekomponenter (rutet)
+│   ├── ProjectModal.tsx      # Portal-basert modal (unngår motion.div stacking context)
+│   └── ...
+├── hooks/
+│   ├── useIsMobile.ts        # Deaktiverer animasjoner på mobil
+│   └── useInView.ts          # Intersection observer for scroll-animasjoner
+├── locales/
+│   ├── en.json
+│   ├── ru.json
+│   └── no.json
+├── pages/
 │   ├── Home.tsx
 │   ├── Projects.tsx
 │   ├── About.tsx
-│   ├── Contact.tsx
-│   └── NotFound.tsx
-├── hooks/               # Tilpassede React hooks
-│   ├── useInView.ts
-│   └── useIsMobile.ts
-├── locales/             # i18n-oversettelser
-│   ├── en.json
-│   ├── no.json
-│   └── ru.json
-├── shared/              # Delt konfigurasjon og data
-│   ├── config.ts
-│   └── projects.ts
-├── App.tsx              # Router-oppsett
-└── main.tsx             # Inngangspunkt
+│   └── Contact.tsx
+├── shared/
+│   └── projects.ts           # Prosjektdata + URL-oppløsning for ressurser
+├── styles/
+│   ├── tokens.scss           # Design tokens (farger, mellomrom, typografi)
+│   └── [Page]/[page].module.scss
+├── App.tsx
+└── main.tsx
 ```
 
 ---
 
-## 🚀 Kom i Gang
+## Sider
 
-### Forutsetninger
-- Node.js 18+
-- Bun (pakkehåndterer)
+- **Home** — hero, utvalgte prosjekter, tilnærming
+- **Projects** — alle 14 prosjekter med statusfiltre, featured-seksjon, kortgrid, arkivliste
+- **About** — bakgrunn, læringsveien, prinsipper
+- **Contact** — skjema med e-postlevering via backend
 
-### Installasjon
+---
+
+## Prosjekter (14)
+
+| # | Tittel | Status |
+|---|---|---|
+| 01 | Aether | eksperiment |
+| 02 | 2048 | eksperiment |
+| 03 | Yatzy | eksperiment |
+| 04 | Stasis | ferdig |
+| 05 | HDUFNDSK | aktiv |
+| 06 | Kropp Fitness | eksperiment |
+| 07 | Skrekkeparken | eksperiment |
+| 08 | Date Time Wallpaper | eksperiment |
+| 09 | Redbeard VFX | ferdig |
+| 10 | Todo React | ferdig |
+| 11 | Skan Jus | ferdig |
+| 12 | Norden Verk | ferdig |
+| 13 | Greenfield Farms | ferdig |
+| 14 | Nordic Market | planlagt |
+
+Planlagte prosjekter er deaktivert (ingen modal) og viser `[ COMING SOON ]` ved hover.
+
+---
+
+## Internasjonalisering
+
+Tre språk støttes via `i18next-browser-languagedetector`:
+
+```typescript
+import { useTranslation } from 'react-i18next';
+
+const { t } = useTranslation();
+t('projects.list.stasis.fullDescription')
+```
+
+All UI-tekst, prosjektbeskrivelser og fullstendige beskrivelser er oversatt i `src/locales/{en,ru,no}.json`.
+
+---
+
+## Viktige tekniske valg
+
+**ProjectModal via `createPortal`**
+Framer Motions `motion.div` med `transform` oppretter en ny CSS containing block, noe som ødelegger `position: fixed` på barn-elementer. Modalen monteres i `document.body` via portal — posisjoneres relativt til viewport uavhengig av animasjonswrappere.
+
+**Ingen doble kanter**
+Hver seksjon har kun `border-bottom`. Naboseksjoner deler denne ene linjen — ingen `border-top` på neste seksjon.
+
+**Animasjoner kun på desktop**
+`useIsMobile()` kontrollerer alle Framer Motion-wrappere. Mobil rendrer vanlige `div`-elementer for å unngå layout-problemer fra transform-animasjoner på små skjermer.
+
+**Vite statiske ressurs-URLer**
+Ressursstier i `src/shared/projects.ts` bruker Vite-idiomet slik at de overlever production-bygg:
+```typescript
+videoUrl: new URL('../assets/project_videos/stasis.mp4', import.meta.url).href
+```
+
+---
+
+## Kom i gang
 
 ```bash
 # Installer avhengigheter
 bun install
 
-# Start dev-server
+# Start dev-server (http://localhost:5173)
 bun run dev
 
 # Bygg for produksjon
 bun run build
 ```
 
-Dev-server kjører på `http://localhost:5173`
-
 ---
 
-## 🌍 Språk
+## Forfatter
 
-Støtter 3 språk med cookie-basert persistens:
-- **EN** — Engelsk (standard)
-- **RU** — Russisk
-- **NO** — Norsk
-
-Språkvalg lagret i `lang` cookie. Første brukerpreferanse overstyrer systemspråkdeteksjon.
-
----
-
-## 📄 Sider
-
-- **Home** — Hero + utvalgte prosjekter + tilnærming
-- **Projects** — Fullt prosjektgalleri med filtre
-- **About** — Bakgrunn, læringssti, prinsipper
-- **Contact** — Kontaktskjema (koblet til backend)
-
----
-
-## 🎨 Designsystem
-
-Bruker CSS-variabler for:
-- Fargepalett
-- Typografiregler
-- Avstandssystem
-- Komponentretningslinjer
-
----
-
-## 🔧 Utvikling
-
-### Legge til Komponenter
-
-1. Opprett i `src/components/ComponentName.tsx`
-2. Eksporter fra `src/components/index.ts`
-3. Bruk TypeScript for props
-4. Følg designtokens (ingen hardkodede farger)
-
-### Legge til Sider
-
-1. Opprett i `src/pages/PageName.tsx`
-2. Legg til rute i `App.tsx`
-3. Bruk `useTranslation()` for oversettelser
-4. Eksporter fra `src/pages/index.ts`
-
-### Arbeide med i18n
-
-```typescript
-import { useTranslation } from 'react-i18next';
-
-export function MyComponent() {
-  const { t } = useTranslation();
-  return <h1>{t('home.title')}</h1>;
-}
-```
-
----
-
-## 🎯 Læringsmål
-
-- React 19 med TypeScript
-- Internasjonalisering (i18next)
-- React Router v7
-- Framer Motion-animasjoner
-- Skjemahåndtering med react-hook-form
-- Fullstack-arkitektur (React + Express)
-- Produksjonsdeployment
-
----
-
-## 👤 Forfatter
-
-**Amadi Masuev**  
-Førsteårs IT-student ved Porsgrunn videregående skole, Norge.
+Amadi Masuev — første år, IT og medieproduksjon, Porsgrunn videregående skole.
+Begynte å kode mai 2025. Jobber mot ML-engineering.
 
 E-post: masuevamadi@gmail.com  
-GitHub: [@marborz](https://github.com/marborz)
-
----
-
-## 📜 Lisens
-
-MIT — Bruk gjerne som referanse eller inspirasjon.
-
----
-
-**Bygget med intensjonell arkitektur, ikke tilfeldig kompleksitet.**
+GitHub: [github.com/MARBORZ](https://github.com/MARBORZ)
