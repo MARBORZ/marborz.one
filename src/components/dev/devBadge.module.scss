@@ -1,0 +1,17 @@
+@use '../../styles/tokens' as *;
+
+.badge {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1000;
+  padding: 4px 10px;
+  border-radius: $radius-pill;
+  font-family: $font-mono;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: $letter-spacing-wide;
+  color: $color-bg;
+  background-color: $color-text;
+  pointer-events: none;
+}

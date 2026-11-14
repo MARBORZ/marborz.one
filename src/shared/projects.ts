@@ -1,4 +1,4 @@
-import { PROJECTS_LIST } from "./env";
+import { IS_DEV } from "./env";
 import { prodPlannedProjects, prodProjects } from "./projectsProd";
 
 export type ProjectStatus = "active" | "shipped" | "experiment" | "planned";
@@ -200,7 +200,7 @@ export const isDemoLink = (project: Project) => {
   return DEMO_HOSTS.some((demoHost) => host.endsWith(demoHost));
 };
 
-const useProdList = PROJECTS_LIST === "prod";
+const useProdList = !IS_DEV;
 
 export const projects = useProdList ? prodProjects : devProjects;
 export const plannedProjects = useProdList ? prodPlannedProjects : devPlannedProjects;
