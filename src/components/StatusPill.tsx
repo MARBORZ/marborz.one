@@ -7,7 +7,6 @@ export default function StatusPill({ status, className }: { status: ProjectStatu
 
   return (
     <span className={`${styles.pill} ${styles[status]} ${className ?? ""}`}>
-      {status === "active" && <span className={styles.dot} aria-hidden="true" />}
       {t(`common.statuses.${status}`)}
     </span>
   );
