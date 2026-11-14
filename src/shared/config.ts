@@ -1,6 +1,6 @@
 // Site-wide configuration constants
 export const SITE_CONFIG = {
-  email: 'masuevamadi@gmail.com',
+  email: 'masuevamadi@marborz.one',
   github: 'https://github.com/MARBORZ',
   githubUsername: 'MARBORZ',
   location: {

@@ -18,10 +18,10 @@ interface Principle {
   body: string
 }
 
-const QUICK_INFO_KEYS = ['location', 'status', 'codingSince', 'focus', 'stack', 'editor'] as const
+const QUICK_INFO_KEYS = ['location', 'status', 'codingSince', 'focus', 'stack', 'frameworks', 'editor'] as const
 
 // How far along each learning step is, in the same order as about.learning.items
-const LEARNING_PROGRESS = [1, 0.6, 0.25, 0.1]
+const LEARNING_PROGRESS = [1, 0.5, 0.15]
 
 export default function About() {
   const { t } = useTranslation()

@@ -22,7 +22,7 @@
   },
   "home": {
     "breadcrumb": "001 / HOME",
-    "location": "PORSGRUNN, 59.14°N · 2026",
+    "location": "PORSGRUNN, 59.14°N · {{date}}",
     "hero": {
       "line1": "Fullstack developer.",
       "line2": "Vg2 IT student.",
@@ -37,11 +37,11 @@
       "label": "— APPROACH",
       "line1": "I want to understand",
       "line2": "what I'm building.",
-      "body": "Started coding in May 2025. Now I'm learning fullstack: React, TypeScript, Node and Postgres. Right now the goal is a solid foundation."
+      "body": "Started coding in December 2024. I build fullstack and now go deeper into fundamentals and architecture, on the way to ML engineering."
     },
     "cta": {
       "label": "— GET IN TOUCH",
-      "email": "masuevamadi@gmail.com →"
+      "email": "masuevamadi@marborz.one →"
     },
     "footer": {
       "next": "→ PROJECTS"
@@ -49,7 +49,7 @@
   },
   "projects": {
     "breadcrumb": "002 / PROJECTS",
-    "count": "14 PROJECTS",
+    "count": "{{count}} PROJECTS",
     "hero": {
       "line1": "What I've built",
       "line2": "so far."
@@ -141,10 +141,46 @@
       }
     },
     "footer": {
-      "next": "→ ABOUT"
+      "next": "→ ABOUT",
+      "death-trip": {
+        "tagline": "dark-mood experiment, built as a duo",
+        "description": "Moody landing experiment in React and TypeScript, built with a friend.",
+        "fullDescription": "An experiment with a dark aesthetic: Motion for animation, Lenis for smooth scroll. Made together with Vadym Yabluchkin, each on our own branch, merged through pull requests. My first real team workflow in git."
+      },
+      "bio-site": {
+        "tagline": "my first portfolio",
+        "description": "First version of my portfolio, with its own Express server for the contact form.",
+        "fullDescription": "My first portfolio. React and Vite on the front, a small Express server with rate limiting for the contact form. It ran on a Google Cloud VM behind Nginx with HTTPS. Built to learn how deployment actually works."
+      },
+      "maskin-anlegg": {
+        "tagline": "client site for a property company",
+        "description": "Landing page for a Norwegian property maintenance company. Client project.",
+        "fullDescription": "Landing page for MK Maskin & Anlegg AS, a company that takes care of property for housing co-ops and businesses. Next.js, Motion and Embla carousels, with a contact form that sends email from an API route. A real client, real deadlines."
+      },
+      "velnote": {
+        "tagline": "Markdown notes with tags",
+        "description": "Fullstack notes app: write in Markdown, organize with tags.",
+        "fullDescription": "Notes app with its own backend. React 19 and Tailwind on the front, Express and PostgreSQL behind it, JWT auth with bcrypt and zod validation. The project where I wrote auth myself instead of using a service."
+      },
+      "marborz": {
+        "tagline": "this site",
+        "description": "The portfolio you're looking at, in three languages.",
+        "fullDescription": "This site. React 19, TypeScript, SCSS modules and design tokens, i18n in English, Norwegian and Russian, dark theme, motion that stays out of the way. The contact form runs as a serverless function."
+      },
+      "lecture-studio": {
+        "tagline": "hours of lectures, minutes to study",
+        "description": "Desktop app that turns recorded lectures into notes you can search.",
+        "fullDescription": "Takes a recorded lecture, cuts the silence, transcribes it and writes short notes with clickable timecodes. You can ask questions across lessons and jump to the moment with the answer. Runs locally on macOS and Windows, has its own MCP server. Built for my own courses."
+      },
+      "omioroom": {
+        "tagline": "watch party with synced video",
+        "description": "Watch videos together: up to 32 people, playback in sync.",
+        "fullDescription": "Watch party for friends: rooms for 2 to 32 people, video synced for everyone, chat and voice chat over WebRTC. No own server: React on Vercel and Supabase with Postgres functions, RLS and Realtime. Playback state lives in the database, each client computes position from one anchor."
+      }
     },
     "modal": {
       "openDemo": "OPEN DEMO",
+      "openRepo": "SOURCE CODE",
       "close": "Close",
       "loading": "LOADING VIDEO"
     }
@@ -159,41 +195,25 @@
     },
     "background": {
       "label": "— BACKGROUND",
-      "body": "I'm Amadi Masuev. I'm in Vg2 Information Technology at Porsgrunn videregående skole, Sør campus, where I've chosen to focus on development.\n\nI started programming in May 2025 and build fullstack projects with React and Node.js. Right now I'm learning Next.js and digging deeper into backend."
+      "body": "I'm Amadi Masuev. I'm in Vg2 Information Technology at Porsgrunn videregående skole, Sør campus, where I've chosen to focus on development.\n\nI started programming in December 2024 and build fullstack projects end to end, from interface to server and database. Now I'm sharpening the fundamentals: how languages work, software architecture, Python and C++. Next step is ML engineering."
     },
     "quickInfo": {
       "label": "— QUICK INFO",
       "location": { "key": "LOCATION", "value": "Porsgrunn, Norway" },
       "status": { "key": "STATUS", "value": "Open to junior roles" },
-      "codingSince": { "key": "CODING SINCE", "value": "May 2025" },
+      "codingSince": { "key": "CODING SINCE", "value": "December 2024" },
       "focus": { "key": "FOCUS", "value": "Fullstack → ML" },
-      "stack": { "key": "STACK", "value": "React · TS · Node" },
+      "stack": { "key": "STACK", "value": "TypeScript · Python · C++ · SQL" },
+      "frameworks": { "key": "FRAMEWORKS", "value": "React · Next.js · Node" },
       "editor": { "key": "EDITOR", "value": "VS Code" }
     },
     "learning": {
       "label": "— LEARNING PATH",
-      "subtitle": "Where I am now, and where I'm headed.",
+      "subtitle": "Fullstack is covered. Now I'm sharpening the fundamentals before moving into ML engineering.",
       "items": [
-        {
-          "level": "01",
-          "name": "React, HTML, CSS, JavaScript",
-          "status": "COMFORTABLE"
-        },
-        {
-          "level": "02",
-          "name": "TypeScript, Node, Express",
-          "status": "LEARNING NOW"
-        },
-        {
-          "level": "03",
-          "name": "Next.js, NestJS, PostgreSQL",
-          "status": "NEXT"
-        },
-        {
-          "level": "04",
-          "name": "Python, math, ML basics",
-          "status": "LONG-TERM"
-        }
+        { "level": "01", "name": "Fullstack: React, TypeScript, Node, Next.js", "status": "COMFORTABLE" },
+        { "level": "02", "name": "Language fundamentals, architecture, Python, C++", "status": "WORKING ON IT" },
+        { "level": "03", "name": "ML engineering", "status": "NEXT" }
       ]
     },
     "principles": {
@@ -246,7 +266,7 @@
     },
     "direct": {
       "label": "— DIRECT",
-      "email": { "key": "EMAIL", "value": "masuevamadi@gmail.com →" },
+      "email": { "key": "EMAIL", "value": "masuevamadi@marborz.one →" },
       "github": { "key": "GITHUB", "value": "github.com/MARBORZ →" },
       "location": {
         "key": "LOCATION",

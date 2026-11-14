@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
+import { currentYear } from '@/shared/date'
 import { Link } from 'react-router-dom'
 import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion'
 import Footer from '@/components/Footer'
@@ -42,7 +43,7 @@ export default function Home() {
       <section className={styles.page}>
         <div className={styles.topBar}>
           <div className={styles.breadcrumb}>{t('home.breadcrumb')}</div>
-          <div className={styles.location}>{t('home.location')}</div>
+          <div className={styles.location}>{t('home.location', { date: currentYear() })}</div>
         </div>
 
         <HeroTitle

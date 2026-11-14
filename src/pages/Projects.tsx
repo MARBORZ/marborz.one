@@ -104,7 +104,7 @@ export default function Projects() {
       <section className={styles.page}>
         <div className={styles.topBar}>
           <div className={styles.breadcrumb}>{t("projects.breadcrumb")}</div>
-          <div className={styles.count}>{t("projects.count")}</div>
+          <div className={styles.count}>{t("projects.count", { count: allProjects.length })}</div>
         </div>
 
         <HeroTitle

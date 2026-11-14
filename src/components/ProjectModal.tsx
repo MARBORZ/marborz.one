@@ -187,6 +187,22 @@ function ModalPanel({ project, onClose }: { project: Project; onClose: () => voi
                 </span>
               </motion.a>
             )}
+
+            {project.repoUrl && (
+              <motion.a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.demoLink}
+                variants={revealVariants}
+                whileTap={{ scale: 0.97 }}
+              >
+                {t('projects.modal.openRepo')}
+                <span className={styles.demoArrow} aria-hidden="true">
+                  ↗
+                </span>
+              </motion.a>
+            )}
           </motion.div>
         </div>
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { currentYear } from '@/shared/date'
 import HeroTitle from '@/components/motion/HeroTitle'
 import { Reveal } from '@/components/motion/Reveal'
 import styles from '@/styles/NotFound/notFound.module.scss'
@@ -11,7 +12,7 @@ export default function NotFound() {
     <section className={styles.page}>
       <div className={styles.topBar}>
         <div className={styles.breadcrumb}>{t('notFound.breadcrumb')}</div>
-        <div className={styles.status}>{t('home.location')}</div>
+        <div className={styles.status}>{t('home.location', { date: currentYear() })}</div>
       </div>
 
       <HeroTitle className={styles.hero} lines={['404', t('notFound.line2')]} />
