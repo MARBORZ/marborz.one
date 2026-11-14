@@ -69,11 +69,6 @@
       "label": "— EKSPERIMENTER OG ARKIV"
     },
     "list": {
-      "aether": {
-        "tagline": "landingsside for et UI-bibliotek",
-        "description": "Eksperiment med en landingsside. Minimalistisk design, myk skrolling og egen musepeker.",
-        "fullDescription": "Landingsside for et tenkt UI-bibliotek, med egen musepeker, animasjoner når du skroller og enkel typografi. Første gang jeg prøvde å lage noe som faktisk så gjennomtenkt ut. Brukte mye tid på luft og rytme mellom elementene."
-      },
       "2048": {
         "tagline": "klassikeren i ren JavaScript",
         "description": "Klassisk 2048 i ren JavaScript. Laget mens jeg lærte OOP og asynkron kode.",
@@ -83,16 +78,6 @@
         "tagline": "terningspill med alle reglene",
         "description": "Fullt Yatzy-spill i ren JavaScript. Laget på to dager som skoleoppgave, med logikk og DOM holdt hver for seg.",
         "fullDescription": "Yatzy med alle reglene for poeng: yatzy, hus og resten. Spillogikken og DOM-koden ligger i hver sin fil. Det virket unødvendig helt til jeg måtte feilsøke. Laget på to dager for skolen og pusset på etterpå."
-      },
-      "stasis": {
-        "tagline": "landingsside for en klinikk",
-        "description": "Landingsside for en oppdiktet klinikk for lang levetid. React 19, Tailwind v4 og Framer Motion.",
-        "fullDescription": "Landingsside for en oppdiktet klinikk for lang levetid. Målet var at det skulle se dyrt ut. React 19, Tailwind v4 og Framer Motion. Antakelig det mest designfokuserte jeg har laget."
-      },
-      "hdufndsk": {
-        "tagline": "nettside om ruskjøring",
-        "description": "Nettside om ruskjøring. Laget med tanke på at temaet er alvorlig, ikke bare for å se bra ut.",
-        "fullDescription": "Nettside om ruskjøring. Det skulle bli en sosial plattform, men ble et eksperiment. Backend finnes, med Node og Express, og det er det første API-et jeg skrev helt selv. Siden er fortsatt oppe, men den er ikke ferdig."
       },
       "kropp-fitness": {
         "tagline": "min første landingsside",
@@ -111,37 +96,24 @@
       },
       "redbeardvfx": {
         "tagline": "portefølje for en VFX-supervisor",
-        "description": "Porteføljeside for en VFX-supervisor. Ekte kundeprosjekt, allerede publisert.",
-        "fullDescription": "Porteføljeside for en VFX-supervisor. Siden er publisert, og jeg jobber med de siste kravene før den leveres. Første gang jeg bygde noe ut fra en annen persons kreative visjon og ikke min egen."
+        "description": "Porteføljeside for en VFX-supervisor. Kundeprosjekt, live.",
+        "fullDescription": "Portefølje for VFX-supervisor Rustam Masuev. React 19, TypeScript og SCSS-moduler med Feature-Sliced Design, og et kontaktskjema som kjører som en Vercel-funksjon. Første gang jeg bygde noe rundt en annens kreative visjon i stedet for min egen."
       },
       "todo-react": {
-        "tagline": "fullstack-app for oppgaver",
-        "description": "Fullstack-app for oppgaver. React, Node og Express, koblet til en ekte database.",
-        "fullDescription": "Fullstack-app for oppgaver. React på frontend, Node og Express på backend, koblet til en ekte database. Første gang alle delene faktisk snakket sammen fra start til slutt."
+        "tagline": "gjøremålsapp på FSD",
+        "description": "Gjøremålsapp på Feature-Sliced Design: json-server i utvikling, localStorage i produksjon.",
+        "fullDescription": "Gjøremålsapp strukturert med Feature-Sliced Design. json-server som falskt API i utvikling, localStorage i produksjon og en liten router jeg skrev selv. En liten app, men den første der strukturen betydde mer enn funksjonene."
       },
       "skan-jus": {
         "tagline": "landingsside for et advokatfirma",
         "description": "Landingsside for et oppdiktet norsk advokatfirma. Mørkt tema, gulldetaljer og egen musepeker.",
         "fullDescription": "Landingsside for Skan Jus, et oppdiktet norsk advokatfirma. Mørkt tema, gulldetaljer og en egen trekantet musepeker. Laget for å øve på design tokens i Tailwind v4 og logikken bak en egen musepeker."
       },
-      "norden-verk": {
-        "tagline": "landingsside for et møbelsnekkeri",
-        "description": "Landingsside for et oppdiktet norsk møbelsnekkeri. Musepeker formet som en hammer.",
-        "fullDescription": "Landingsside for et oppdiktet norsk møbelsnekkeri. Musepekeren er en hammer som endrer form når du holder over eller klikker. Myk skrolling med Lenis, animasjoner med Framer Motion og Context API for global state."
-      },
       "greenfield-farms": {
         "tagline": "nettside for en gård",
         "description": "Nettside med flere sider for en gård. React Router, Feature-Sliced Design og komponenttester.",
         "fullDescription": "Nettside for en oppdiktet gård, med forside, besøksside og 404-side i React Router. Første prosjekt der jeg brukte Feature-Sliced Design med widgets, pages og shared. Også første gang jeg skrev komponenttester."
       },
-      "nordic-market": {
-        "tagline": "nettbutikk, under arbeid",
-        "description": "Nettbutikk med nordisk design. Under arbeid.",
-        "fullDescription": "Nettbutikk med nordisk stil. Akkurat nå planlegger jeg datamodellen og hvordan komponentene skal henge sammen."
-      }
-    },
-    "footer": {
-      "next": "→ OM MEG",
       "death-trip": {
         "tagline": "mørkt eksperiment, laget i par",
         "description": "Stemningsfull landingsside i React og TypeScript, laget sammen med en venn.",
@@ -177,6 +149,9 @@
         "description": "Se video sammen: opptil 32 personer, avspilling i synk.",
         "fullDescription": "Watch party for venner: rom for 2 til 32 personer, video i synk for alle, chat og talechat over WebRTC. Ingen egen server: React på Vercel og Supabase med Postgres-funksjoner, RLS og Realtime. Avspillingsstatus ligger i databasen, hver klient regner ut posisjonen fra ett ankerpunkt."
       }
+    },
+    "footer": {
+      "next": "→ OM MEG"
     },
     "modal": {
       "openDemo": "ÅPNE DEMO",
