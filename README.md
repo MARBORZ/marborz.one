@@ -1,8 +1,8 @@
 # marborz
 
-My portfolio site, [marborz.one](https://marborz.one).
+My portfolio – [marborz.one](https://marborz.one).
 
-React 19, TypeScript, Vite, SCSS modules with design tokens in CSS variables. Translations through i18next (English, Norwegian, Russian), forms through react-hook-form, deployed on Vercel.
+React 19, TypeScript, Vite, SCSS modules with design tokens in CSS variables. Three languages through i18next (EN, NO, RU), forms with react-hook-form. Deployed on Vercel.
 
 ## Run
 
