@@ -1,3 +1,6 @@
+import { PROJECTS_LIST } from "./env";
+import { prodPlannedProjects, prodProjects } from "./projectsProd";
+
 export type ProjectStatus = "active" | "shipped" | "experiment" | "planned";
 
 export const PROJECT_FILTERS = [
@@ -21,7 +24,7 @@ export interface Project {
   imageUrl?: string;
 }
 
-export const projects: Project[] = [
+const devProjects: Project[] = [
   {
     id: "omioroom",
     number: "01",
@@ -63,8 +66,8 @@ export const projects: Project[] = [
     number: "05",
     title: "MK Maskin & Anlegg",
     stack: "Next.js · TypeScript · Motion · Embla · Resend",
-    status: "shipped",
-    demoUrl: "https://maskin-anlegg-as.vercel.app/",
+    status: "active",
+    demoUrl: "https://www.mkmaskin.no/",
     repoUrl: "https://github.com/MARBORZ/maskin-anlegg-as",
   },
   {
@@ -73,7 +76,7 @@ export const projects: Project[] = [
     title: "RedbeardVFX",
     stack: "React · TypeScript · SCSS · Vercel Functions · Resend",
     status: "shipped",
-    demoUrl: "https://redbeardvfx-site.vercel.app/",
+    demoUrl: "https://redbeardvfx.work",
     repoUrl: "https://github.com/MARBORZ/redbeardvfx",
     videoUrl: new URL("../assets/project_videos/redbeardvfx.mp4", import.meta.url).href,
     imageUrl: new URL("../assets/project_images/redbeardvfx.webp", import.meta.url).href,
@@ -90,11 +93,11 @@ export const projects: Project[] = [
   {
     id: "bio-site",
     number: "08",
-    title: "Bio Site",
+    title: "marborz v1",
     stack: "React · Express · Resend · SCSS",
     status: "shipped",
     demoUrl: "https://marborzone.vercel.app/",
-    repoUrl: "https://github.com/MARBORZ/bio-site",
+    repoUrl: "https://github.com/MARBORZ/marborz_v1",
   },
   {
     id: "greenfield-farms",
@@ -186,6 +189,19 @@ export const projects: Project[] = [
   },
 ];
 
-export const plannedProjects: Project[] = [];
+const devPlannedProjects: Project[] = [];
 
+const DEMO_HOSTS = ["vercel.app", "imporsgrunn.no"];
+
+// Live products get a plain "Open"; previews on temporary hosts are labeled as demos
+export const isDemoLink = (project: Project) => {
+  if (!project.demoUrl || project.status === "active") return false;
+  const host = new URL(project.demoUrl).hostname;
+  return DEMO_HOSTS.some((demoHost) => host.endsWith(demoHost));
+};
+
+const useProdList = PROJECTS_LIST === "prod";
+
+export const projects = useProdList ? prodProjects : devProjects;
+export const plannedProjects = useProdList ? prodPlannedProjects : devPlannedProjects;
 export const allProjects = [...projects, ...plannedProjects];

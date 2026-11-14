@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, memo } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion, useDragControls, type PanInfo } from 'framer-motion'
-import { allProjects, type Project } from '@/shared/projects'
+import { allProjects, isDemoLink, type Project } from '@/shared/projects'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { useOverlay } from '@/hooks/useOverlay'
 import { MEDIA } from '@/shared/breakpoints'
@@ -154,7 +154,7 @@ function ModalPanel({ project, onClose }: { project: Project; onClose: () => voi
           <motion.div className={styles.body} variants={contentVariants} initial="hidden" animate="visible">
             <motion.div className={styles.topRow} variants={revealVariants}>
               <div className={styles.meta}>
-                <span className={styles.num}>/{project.number}</span>
+                <span className={styles.num}>{project.number}</span>
                 <StatusPill status={project.status} />
               </div>
             </motion.div>
@@ -181,7 +181,7 @@ function ModalPanel({ project, onClose }: { project: Project; onClose: () => voi
                 variants={revealVariants}
                 whileTap={{ scale: 0.97 }}
               >
-                {t('projects.modal.openDemo')}
+                {t(isDemoLink(project) ? 'projects.modal.openDemo' : 'projects.modal.open')}
                 <span className={styles.demoArrow} aria-hidden="true">
                   ↗
                 </span>

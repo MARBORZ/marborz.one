@@ -59,7 +59,7 @@ function FeaturedProject({
         </div>
         <div className={styles.featuredBody}>
           <div className={styles.featuredMeta}>
-            <span className={styles.featuredNum}>/{project.number}</span>
+            <span className={styles.featuredNum}>{project.number}</span>
             <StatusPill status={project.status} />
           </div>
           <span className={styles.featuredTitle}>{project.title}</span>
@@ -155,7 +155,7 @@ export default function Projects() {
                     </div>
                     <div className={styles.cardBody}>
                       <div className={styles.cardMeta}>
-                        <span className={styles.cardNum}>/{project.number}</span>
+                        <span className={styles.cardNum}>{project.number}</span>
                         <StatusPill status={project.status} />
                       </div>
                       <span className={styles.cardTitle}>{project.title}</span>

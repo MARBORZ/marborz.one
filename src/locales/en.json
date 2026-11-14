@@ -148,12 +148,38 @@
         "tagline": "watch party with synced video",
         "description": "Watch videos together: up to 32 people, playback in sync.",
         "fullDescription": "Watch party for friends: rooms for 2 to 32 people, video synced for everyone, chat and voice chat over WebRTC. No own server: React on Vercel and Supabase with Postgres functions, RLS and Realtime. Playback state lives in the database, each client computes position from one anchor."
+      },
+      "aether": {
+        "tagline": "landing for a UI library",
+        "description": "Landing page experiment. Minimal design, smooth scrolling and a custom cursor.",
+        "fullDescription": "Landing page for a made-up UI library. Custom cursor, scroll animations and simple type. The first time I tried to make something that actually looked deliberate. I spent most of the time on spacing and rhythm."
+      },
+      "stasis": {
+        "tagline": "landing for a longevity clinic",
+        "description": "Landing page for a made-up longevity clinic. React 19, Tailwind v4 and Framer Motion.",
+        "fullDescription": "Landing page for a made-up longevity clinic. The goal was to make it look expensive. React 19, Tailwind v4 and Framer Motion. Probably the most design-heavy thing I've made."
+      },
+      "hdufndsk": {
+        "tagline": "site about drunk driving",
+        "description": "Awareness site about drunk and drugged driving. Built with a serious topic in mind, not just for looks.",
+        "fullDescription": "Awareness site about drunk and drugged driving. It was meant to become a social platform but stayed an experiment. The backend is there, Node and Express, and it's the first API I wrote on my own. Still online, still unfinished."
+      },
+      "norden-verk": {
+        "tagline": "landing for a furniture workshop",
+        "description": "Landing page for a made-up Norwegian furniture workshop. Hammer-shaped cursor.",
+        "fullDescription": "Landing page for a made-up Norwegian furniture workshop. The cursor is a hammer that changes shape on hover and click. Smooth scrolling with Lenis, animations with Framer Motion and the Context API for global state."
+      },
+      "nordic-market": {
+        "tagline": "online store, in progress",
+        "description": "Online store with a Nordic look. Work in progress.",
+        "fullDescription": "Online store with a Nordic look. Right now I'm planning the data model and how the components fit together."
       }
     },
     "footer": {
       "next": "→ ABOUT"
     },
     "modal": {
+      "open": "OPEN",
       "openDemo": "OPEN DEMO",
       "openRepo": "SOURCE CODE",
       "close": "Close",

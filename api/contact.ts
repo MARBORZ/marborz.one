@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer'
+import { renderContactEmail, renderContactText } from './_contactEmail.js'
 
 // Contact form handler (Vercel serverless function).
 // Sends the message over Gmail SMTP straight to the inbox; no third-party mail API.
@@ -34,13 +35,16 @@ export async function POST(request: Request) {
     auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD },
   })
 
+  const emailInput = { ...payload, sentAt: new Date() }
+
   try {
     await transporter.sendMail({
       from: `marborz.one <${GMAIL_USER}>`,
       to: CONTACT_TO || GMAIL_USER,
       replyTo: `${payload.name.replace(/[<>"\r\n]/g, '')} <${payload.email}>`,
       subject: `marborz.one — message from ${payload.name.replace(/[\r\n]/g, ' ')}`,
-      text: `${payload.message}\n\n— ${payload.name} <${payload.email}>`,
+      text: renderContactText(emailInput),
+      html: renderContactEmail(emailInput),
     })
     return json(200, { ok: true })
   } catch {
