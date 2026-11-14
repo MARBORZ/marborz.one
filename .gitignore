@@ -27,3 +27,13 @@ package-lock.json
 *.env
 git-projects/
 vault/
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.claude/
+CLAUDE.md
+AGENTS.md
