@@ -193,7 +193,7 @@ export const projects: Project[] = [
     number: "17",
     title: "Velnote",
     stack: "React · TypeScript · Express · PostgreSQL · JWT",
-    status: "active",
+    status: "shipped",
     demoUrl: "https://velnote-two.vercel.app/",
     repoUrl: "https://github.com/MARBORZ/velnote",
   },
