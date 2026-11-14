@@ -205,7 +205,7 @@
       "codingSince": { "key": "KODER SIDEN", "value": "Desember 2024" },
       "focus": { "key": "FOKUS", "value": "Fullstack → ML" },
       "stack": { "key": "SPRÅK", "value": "JS/TS · Python" },
-      "frameworks": { "key": "RAMMEVERK / BIBLIOTEKER", "value": "React · Next.js · Node" },
+      "frameworks": { "key": "FRAMEWORKS / BIBLIOTEKER", "value": "React · Next.js · Node" },
       "editor": { "key": "EDITOR", "value": "VS Code" }
     },
     "learning": {
