@@ -204,8 +204,8 @@
       "status": { "key": "STATUS", "value": "Open to junior roles" },
       "codingSince": { "key": "CODING SINCE", "value": "December 2024" },
       "focus": { "key": "FOCUS", "value": "Fullstack → ML" },
-      "stack": { "key": "STACK", "value": "TypeScript · Python · C++ · SQL" },
-      "frameworks": { "key": "FRAMEWORKS", "value": "React · Next.js · Node" },
+      "stack": { "key": "LANGUAGES", "value": "JS/TS · Python" },
+      "frameworks": { "key": "FRAMEWORKS / LIBRARIES", "value": "React · Next.js · Node" },
       "editor": { "key": "EDITOR", "value": "VS Code" }
     },
     "learning": {

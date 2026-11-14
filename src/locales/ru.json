@@ -204,8 +204,8 @@
       "status": { "key": "СТАТУС", "value": "Открыт к junior-позициям" },
       "codingSince": { "key": "ПРОГРАММИРУЮ", "value": "С декабря 2024" },
       "focus": { "key": "ФОКУС", "value": "Fullstack → ML" },
-      "stack": { "key": "СТЕК", "value": "TypeScript · Python · C++ · SQL" },
-      "frameworks": { "key": "ФРЕЙМВОРКИ", "value": "React · Next.js · Node" },
+      "stack": { "key": "ЯП", "value": "JS/TS · Python" },
+      "frameworks": { "key": "ФРЕЙМВОРКИ / БИБЛИОТЕКИ", "value": "React · Next.js · Node" },
       "editor": { "key": "РЕДАКТОР", "value": "VS Code" }
     },
     "learning": {

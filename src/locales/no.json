@@ -204,8 +204,8 @@
       "status": { "key": "STATUS", "value": "Åpen for juniorstillinger" },
       "codingSince": { "key": "KODER SIDEN", "value": "Desember 2024" },
       "focus": { "key": "FOKUS", "value": "Fullstack → ML" },
-      "stack": { "key": "STACK", "value": "TypeScript · Python · C++ · SQL" },
-      "frameworks": { "key": "RAMMEVERK", "value": "React · Next.js · Node" },
+      "stack": { "key": "SPRÅK", "value": "JS/TS · Python" },
+      "frameworks": { "key": "RAMMEVERK / BIBLIOTEKER", "value": "React · Next.js · Node" },
       "editor": { "key": "EDITOR", "value": "VS Code" }
     },
     "learning": {
