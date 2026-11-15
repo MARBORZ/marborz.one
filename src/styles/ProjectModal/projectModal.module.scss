@@ -256,6 +256,11 @@
   @include mobile-lg {
     width: 100%;
     justify-content: center;
+    margin-right: 0;
+
+    & + & {
+      margin-top: $spacing-sm;
+    }
   }
 }
 
