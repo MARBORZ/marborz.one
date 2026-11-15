@@ -82,12 +82,6 @@
 .featuredProject {
   @include card-surface;
   @include coming-soon;
-
-  @include hover {
-    .featuredMedia img {
-      scale: 1.03;
-    }
-  }
 }
 
 .featuredMedia {
@@ -96,10 +90,6 @@
   height: clamp(240px, 42vw, 560px);
   overflow: hidden;
   background-color: $color-surface;
-
-  img {
-    transition: scale 0.9s $ease-apple;
-  }
 
   @include mobile-lg {
     height: auto;
@@ -191,20 +181,10 @@
   @include card-surface;
   @include coming-soon;
 
-  @include hover {
-    .cardMedia img {
-      scale: 1.04;
-    }
-  }
-
   .cardMedia {
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-
-    img {
-      transition: scale 0.9s $ease-apple;
-    }
   }
 
   .cardBody {
