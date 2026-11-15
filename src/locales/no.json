@@ -143,6 +143,11 @@
         "tagline": "se video sammen, synkront",
         "description": "Se video sammen: opptil 32 personer, avspilling i synk.",
         "fullDescription": "Watch party for venner: rom for 2 til 32 personer, video i synk for alle, chat og talechat over WebRTC. Ingen egen server: React på Vercel og Supabase med Postgres-funksjoner, RLS og Realtime. Avspillingsstatus ligger i databasen, hver klient regner ut posisjonen fra ett ankerpunkt."
+      },
+      "moderation-bot": {
+        "tagline": "Telegram-moderatorbot med AI",
+        "description": "Telegram-bot som modererer en gruppechat: AI vurderer rapporter mot chatreglene.",
+        "fullDescription": "Moderatorbot for en Telegram-gruppe. Medlemmer rapporterer meldinger, og en språkmodell sjekker dem mot reglene i chatten og foreslår straff til moderatorene. Advarsler, mute og ban med historikk, moderatorrangeringer, sitater og et chatspill med ekteskap og økonomi. Python med aiogram 3 og SQLite, pluss et Next.js-dashboard for moderatorene."
       }
     },
     "footer": {

@@ -143,6 +143,11 @@
         "tagline": "watch party with synced video",
         "description": "Watch videos together: up to 32 people, playback in sync.",
         "fullDescription": "Watch party for friends: rooms for 2 to 32 people, video synced for everyone, chat and voice chat over WebRTC. No own server: React on Vercel and Supabase with Postgres functions, RLS and Realtime. Playback state lives in the database, each client computes position from one anchor."
+      },
+      "moderation-bot": {
+        "tagline": "Telegram moderation bot with AI",
+        "description": "Telegram bot that moderates a group chat: AI reviews reports against the chat rules.",
+        "fullDescription": "Moderation bot for a Telegram group. Members report messages, and an LLM checks them against the chat rules and suggests a punishment for the mods. Warns, mutes and bans with history, mod ranks, quotes and a chat game with marriages and an economy. Python with aiogram 3 and SQLite, plus a Next.js dashboard for the mods."
       }
     },
     "footer": {

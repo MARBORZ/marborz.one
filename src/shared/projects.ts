@@ -1,3 +1,5 @@
+import { IS_DEV } from "./env";
+
 export type ProjectStatus = "active" | "shipped" | "experiment" | "planned";
 
 export const PROJECT_FILTERS = [
@@ -18,6 +20,8 @@ export interface Project {
   demoUrl?: string;
   // Backup link (e.g. the vercel.app deploy) used when demoUrl doesn't respond
   fallbackUrl?: string;
+  // Placeholder shown only when VITE_APP_ENV is dev
+  devOnly?: boolean;
   repoUrl?: string;
   videoUrl?: string;
   imageUrl?: string;
@@ -194,7 +198,16 @@ export const projects: Project[] = [
   },
 ];
 
-export const plannedProjects: Project[] = [];
+export const plannedProjects: Project[] = [
+  {
+    id: "moderation-bot",
+    number: "16",
+    title: "MAR Moderation Bot",
+    stack: "Python · aiogram 3 · SQLite · DeepSeek · Next.js",
+    status: "planned",
+    devOnly: true,
+  },
+];
 
 const DEMO_HOSTS = ["vercel.app", "imporsgrunn.no"];
 
@@ -205,4 +218,4 @@ export const isDemoLink = (project: Project, url = project.demoUrl) => {
   return DEMO_HOSTS.some((demoHost) => host.endsWith(demoHost));
 };
 
-export const allProjects = [...projects, ...plannedProjects];
+export const allProjects = [...projects, ...plannedProjects].filter((project) => IS_DEV || !project.devOnly);
