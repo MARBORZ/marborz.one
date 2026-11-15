@@ -1,6 +1,3 @@
-import { IS_DEV } from "./env";
-import { prodPlannedProjects, prodProjects } from "./projectsProd";
-
 export type ProjectStatus = "active" | "shipped" | "experiment" | "planned";
 
 export const PROJECT_FILTERS = [
@@ -19,12 +16,14 @@ export interface Project {
   stack: string;
   status: ProjectStatus;
   demoUrl?: string;
+  // Backup link (e.g. the vercel.app deploy) used when demoUrl doesn't respond
+  fallbackUrl?: string;
   repoUrl?: string;
   videoUrl?: string;
   imageUrl?: string;
 }
 
-const devProjects: Project[] = [
+export const projects: Project[] = [
   {
     id: "omioroom",
     number: "01",
@@ -33,6 +32,8 @@ const devProjects: Project[] = [
     status: "active",
     demoUrl: "https://www.omioroom.live/",
     repoUrl: "https://github.com/MARBORZ/omioroom",
+    videoUrl: new URL("../assets/project_videos/omioroom.mp4", import.meta.url).href,
+    imageUrl: new URL("../assets/project_images/omioroom.webp", import.meta.url).href,
   },
   {
     id: "lecture-studio",
@@ -42,66 +43,70 @@ const devProjects: Project[] = [
     status: "active",
     demoUrl: "https://github.com/MARBORZ/lecture-studio/releases",
     repoUrl: "https://github.com/MARBORZ/lecture-studio",
-  },
-  {
-    id: "marborz",
-    number: "03",
-    title: "marborz.one",
-    stack: "React · TypeScript · SCSS · Framer Motion · i18next",
-    status: "active",
-    demoUrl: "https://marborz.one/",
-    repoUrl: "https://github.com/MARBORZ/marborz",
+    videoUrl: new URL("../assets/project_videos/lecture_studio.mp4", import.meta.url).href,
+    imageUrl: new URL("../assets/project_images/lecture_studio.webp", import.meta.url).href,
   },
   {
     id: "velnote",
-    number: "04",
+    number: "03",
     title: "Velnote",
     stack: "React · TypeScript · Express · PostgreSQL · JWT",
     status: "shipped",
     demoUrl: "https://velnote-two.vercel.app/",
     repoUrl: "https://github.com/MARBORZ/velnote",
+    videoUrl: new URL("../assets/project_videos/velnote.mp4", import.meta.url).href,
+    imageUrl: new URL("../assets/project_images/velnote.webp", import.meta.url).href,
   },
   {
     id: "maskin-anlegg",
-    number: "05",
+    number: "04",
     title: "MK Maskin & Anlegg",
     stack: "Next.js · TypeScript · Motion · Embla · Resend",
     status: "active",
     demoUrl: "https://www.mkmaskin.no/",
+    fallbackUrl: "https://maskin-anlegg-as.vercel.app/",
     repoUrl: "https://github.com/MARBORZ/maskin-anlegg-as",
+    videoUrl: new URL("../assets/project_videos/maskin_anlegg.mp4", import.meta.url).href,
+    imageUrl: new URL("../assets/project_images/maskin_anlegg.webp", import.meta.url).href,
   },
   {
     id: "redbeardvfx",
-    number: "06",
+    number: "05",
     title: "RedbeardVFX",
     stack: "React · TypeScript · SCSS · Vercel Functions · Resend",
     status: "shipped",
     demoUrl: "https://redbeardvfx.work",
+    fallbackUrl: "https://redbeardvfx-site.vercel.app/",
     repoUrl: "https://github.com/MARBORZ/redbeardvfx",
     videoUrl: new URL("../assets/project_videos/redbeardvfx.mp4", import.meta.url).href,
     imageUrl: new URL("../assets/project_images/redbeardvfx.webp", import.meta.url).href,
   },
   {
     id: "death-trip",
-    number: "07",
+    number: "06",
     title: "Death Trip",
     stack: "React · TypeScript · Motion · Lenis · Express · Resend",
     status: "shipped",
-    demoUrl: "https://death-trip-site.vercel.app/",
+    demoUrl: "https://www.hdufndsk.site/",
+    fallbackUrl: "https://death-trip-site.vercel.app/",
     repoUrl: "https://github.com/MARBORZ/death-trip-site",
+    videoUrl: new URL("../assets/project_videos/death_trip.mp4", import.meta.url).href,
+    imageUrl: new URL("../assets/project_images/death_trip.webp", import.meta.url).href,
   },
   {
     id: "bio-site",
-    number: "08",
+    number: "07",
     title: "marborz v1",
     stack: "React · Express · Resend · SCSS",
     status: "shipped",
     demoUrl: "https://marborzone.vercel.app/",
     repoUrl: "https://github.com/MARBORZ/marborz_v1",
+    videoUrl: new URL("../assets/project_videos/marborz_v1.mp4", import.meta.url).href,
+    imageUrl: new URL("../assets/project_images/marborz_v1.webp", import.meta.url).href,
   },
   {
     id: "greenfield-farms",
-    number: "09",
+    number: "08",
     title: "Greenfield Farms",
     stack: "React · TypeScript · SCSS · Framer Motion · React Router",
     status: "experiment",
@@ -112,7 +117,7 @@ const devProjects: Project[] = [
   },
   {
     id: "skan-jus",
-    number: "10",
+    number: "09",
     title: "Skan Jus",
     stack: "React · TypeScript · Tailwind",
     status: "experiment",
@@ -123,7 +128,7 @@ const devProjects: Project[] = [
   },
   {
     id: "todo-react",
-    number: "11",
+    number: "10",
     title: "Todo-React",
     stack: "React · json-server · localStorage",
     status: "experiment",
@@ -134,7 +139,7 @@ const devProjects: Project[] = [
   },
   {
     id: "kropp-fitness",
-    number: "12",
+    number: "11",
     title: "Kropp Fitness",
     stack: "HTML · CSS",
     status: "experiment",
@@ -145,7 +150,7 @@ const devProjects: Project[] = [
   },
   {
     id: "skrekkeparken",
-    number: "13",
+    number: "12",
     title: "Skrekkeparken",
     stack: "JavaScript · HTML · CSS · Leaflet.js",
     status: "shipped",
@@ -156,7 +161,7 @@ const devProjects: Project[] = [
   },
   {
     id: "2048",
-    number: "14",
+    number: "13",
     title: "2048 Game",
     stack: "JavaScript · HTML · CSS",
     status: "experiment",
@@ -167,7 +172,7 @@ const devProjects: Project[] = [
   },
   {
     id: "yatzy",
-    number: "15",
+    number: "14",
     title: "Yatzy Dice Game",
     stack: "JavaScript · HTML · CSS",
     status: "experiment",
@@ -178,7 +183,7 @@ const devProjects: Project[] = [
   },
   {
     id: "date-time",
-    number: "16",
+    number: "15",
     title: "Date-Time Wallpaper",
     stack: "JavaScript · HTML · CSS",
     status: "experiment",
@@ -189,19 +194,15 @@ const devProjects: Project[] = [
   },
 ];
 
-const devPlannedProjects: Project[] = [];
+export const plannedProjects: Project[] = [];
 
 const DEMO_HOSTS = ["vercel.app", "imporsgrunn.no"];
 
 // Live products get a plain "Open"; previews on temporary hosts are labeled as demos
-export const isDemoLink = (project: Project) => {
-  if (!project.demoUrl || project.status === "active") return false;
-  const host = new URL(project.demoUrl).hostname;
+export const isDemoLink = (project: Project, url = project.demoUrl) => {
+  if (!url || project.status === "active") return false;
+  const host = new URL(url).hostname;
   return DEMO_HOSTS.some((demoHost) => host.endsWith(demoHost));
 };
 
-const useProdList = !IS_DEV;
-
-export const projects = useProdList ? prodProjects : devProjects;
-export const plannedProjects = useProdList ? prodPlannedProjects : devPlannedProjects;
 export const allProjects = [...projects, ...plannedProjects];

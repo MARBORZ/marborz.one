@@ -187,7 +187,7 @@ export default function Projects() {
                       variants={revealVariants}
                       whileTap={{ scale: 0.99 }}
                     >
-                      <span className={styles.archiveNum}>/{project.number}</span>
+                      <span className={styles.archiveNum}>{project.number}</span>
                       <span className={styles.archiveTitle}>{project.title}</span>
                       <span className={styles.archiveSub}>
                         {t(`projects.list.${project.id}.tagline`)}

@@ -134,11 +134,6 @@
         "description": "Fullstack notatapp: skriv i Markdown, organiser med tagger.",
         "fullDescription": "Notatapp med egen backend. React 19 og Tailwind på frontend, Express og PostgreSQL bak, JWT-innlogging med bcrypt og validering med zod. Prosjektet der jeg skrev autentisering selv i stedet for å bruke en tjeneste."
       },
-      "marborz": {
-        "tagline": "denne siden",
-        "description": "Porteføljen du ser på, på tre språk.",
-        "fullDescription": "Denne siden. React 19, TypeScript, SCSS-moduler og design tokens, i18n på engelsk, norsk og russisk, mørkt tema og animasjon som ikke er i veien. Kontaktskjemaet kjører som en serverless-funksjon."
-      },
       "lecture-studio": {
         "tagline": "timer med forelesninger, minutter å lese",
         "description": "Desktop-app som gjør opptak av forelesninger om til søkbare notater.",
@@ -148,31 +143,6 @@
         "tagline": "se video sammen, synkront",
         "description": "Se video sammen: opptil 32 personer, avspilling i synk.",
         "fullDescription": "Watch party for venner: rom for 2 til 32 personer, video i synk for alle, chat og talechat over WebRTC. Ingen egen server: React på Vercel og Supabase med Postgres-funksjoner, RLS og Realtime. Avspillingsstatus ligger i databasen, hver klient regner ut posisjonen fra ett ankerpunkt."
-      },
-      "aether": {
-        "tagline": "landingsside for et UI-bibliotek",
-        "description": "Eksperiment med en landingsside. Minimalistisk design, myk skrolling og egen musepeker.",
-        "fullDescription": "Landingsside for et tenkt UI-bibliotek, med egen musepeker, animasjoner når du skroller og enkel typografi. Første gang jeg prøvde å lage noe som faktisk så gjennomtenkt ut. Brukte mye tid på luft og rytme mellom elementene."
-      },
-      "stasis": {
-        "tagline": "landingsside for en klinikk",
-        "description": "Landingsside for en oppdiktet klinikk for lang levetid. React 19, Tailwind v4 og Framer Motion.",
-        "fullDescription": "Landingsside for en oppdiktet klinikk for lang levetid. Målet var at det skulle se dyrt ut. React 19, Tailwind v4 og Framer Motion. Antakelig det mest designfokuserte jeg har laget."
-      },
-      "hdufndsk": {
-        "tagline": "nettside om ruskjøring",
-        "description": "Nettside om ruskjøring. Laget med tanke på at temaet er alvorlig, ikke bare for å se bra ut.",
-        "fullDescription": "Nettside om ruskjøring. Det skulle bli en sosial plattform, men ble et eksperiment. Backend finnes, med Node og Express, og det er det første API-et jeg skrev helt selv. Siden er fortsatt oppe, men den er ikke ferdig."
-      },
-      "norden-verk": {
-        "tagline": "landingsside for et møbelsnekkeri",
-        "description": "Landingsside for et oppdiktet norsk møbelsnekkeri. Musepeker formet som en hammer.",
-        "fullDescription": "Landingsside for et oppdiktet norsk møbelsnekkeri. Musepekeren er en hammer som endrer form når du holder over eller klikker. Myk skrolling med Lenis, animasjoner med Framer Motion og Context API for global state."
-      },
-      "nordic-market": {
-        "tagline": "nettbutikk, under arbeid",
-        "description": "Nettbutikk med nordisk design. Under arbeid.",
-        "fullDescription": "Nettbutikk med nordisk stil. Akkurat nå planlegger jeg datamodellen og hvordan komponentene skal henge sammen."
       }
     },
     "footer": {

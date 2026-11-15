@@ -1,7 +1,7 @@
 export type AppEnv = "dev" | "prod";
 
 // Main project environment, set with VITE_APP_ENV=dev|prod in .env (or in Vercel).
-// dev: everything marked dev-only is on (new project list, <DevOnly> parts, dev badge).
+// dev: everything marked dev-only is on (<DevOnly> parts, dev badge).
 // prod: all of that is switched off.
 // Without the variable it follows the build mode: `npm run dev` -> dev, `npm run build` -> prod.
 const resolveAppEnv = (): AppEnv => {

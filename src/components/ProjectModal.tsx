@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion, useDragControls, type PanInfo } from 'framer-motion'
 import { allProjects, isDemoLink, type Project } from '@/shared/projects'
+import { useReachableUrl } from '@/hooks/useReachableUrl'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { useOverlay } from '@/hooks/useOverlay'
 import { MEDIA } from '@/shared/breakpoints'
@@ -87,6 +88,7 @@ function ModalPanel({ project, onClose }: { project: Project; onClose: () => voi
   const isMobile = useMediaQuery(MEDIA.mobileLg)
   const dragControls = useDragControls()
   const closeRef = useRef<HTMLButtonElement>(null)
+  const demoUrl = useReachableUrl(project.demoUrl, project.fallbackUrl)
 
   useOverlay(true, onClose)
 
@@ -172,16 +174,16 @@ function ModalPanel({ project, onClose }: { project: Project; onClose: () => voi
               </motion.p>
             )}
 
-            {project.demoUrl && (
+            {demoUrl && (
               <motion.a
-                href={project.demoUrl}
+                href={demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.demoLink}
                 variants={revealVariants}
                 whileTap={{ scale: 0.97 }}
               >
-                {t(isDemoLink(project) ? 'projects.modal.openDemo' : 'projects.modal.open')}
+                {t(isDemoLink(project, demoUrl) ? 'projects.modal.openDemo' : 'projects.modal.open')}
                 <span className={styles.demoArrow} aria-hidden="true">
                   ↗
                 </span>
