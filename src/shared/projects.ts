@@ -51,8 +51,19 @@ export const projects: Project[] = [
     imageUrl: new URL("../assets/project_images/lecture_studio.webp", import.meta.url).href,
   },
   {
-    id: "velnote",
+    id: "moderation-bot",
     number: "03",
+    title: "MAR Moderation Bot",
+    stack: "Python · aiogram 3 · SQLite · DeepSeek · Next.js",
+    status: "active",
+    demoUrl: "https://marchoidbotweb.vercel.app/",
+    repoUrl: "https://github.com/MARBORZ/mar-moderation_bot",
+    videoUrl: new URL("../assets/project_videos/moderation_bot.mp4", import.meta.url).href,
+    imageUrl: new URL("../assets/project_images/moderation_bot.webp", import.meta.url).href,
+  },
+  {
+    id: "velnote",
+    number: "04",
     title: "Velnote",
     stack: "React · TypeScript · Express · PostgreSQL · JWT",
     status: "shipped",
@@ -63,7 +74,7 @@ export const projects: Project[] = [
   },
   {
     id: "maskin-anlegg",
-    number: "04",
+    number: "05",
     title: "MK Maskin & Anlegg",
     stack: "Next.js · TypeScript · Motion · Embla · Resend",
     status: "active",
@@ -75,7 +86,7 @@ export const projects: Project[] = [
   },
   {
     id: "redbeardvfx",
-    number: "05",
+    number: "06",
     title: "RedbeardVFX",
     stack: "React · TypeScript · SCSS · Vercel Functions · Resend",
     status: "shipped",
@@ -87,7 +98,7 @@ export const projects: Project[] = [
   },
   {
     id: "death-trip",
-    number: "06",
+    number: "07",
     title: "Death Trip",
     stack: "React · TypeScript · Motion · Lenis · Express · Resend",
     status: "shipped",
@@ -99,7 +110,7 @@ export const projects: Project[] = [
   },
   {
     id: "bio-site",
-    number: "07",
+    number: "08",
     title: "marborz v1",
     stack: "React · Express · Resend · SCSS",
     status: "shipped",
@@ -110,7 +121,7 @@ export const projects: Project[] = [
   },
   {
     id: "greenfield-farms",
-    number: "08",
+    number: "09",
     title: "Greenfield Farms",
     stack: "React · TypeScript · SCSS · Framer Motion · React Router",
     status: "experiment",
@@ -121,7 +132,7 @@ export const projects: Project[] = [
   },
   {
     id: "skan-jus",
-    number: "09",
+    number: "10",
     title: "Skan Jus",
     stack: "React · TypeScript · Tailwind",
     status: "experiment",
@@ -132,7 +143,7 @@ export const projects: Project[] = [
   },
   {
     id: "todo-react",
-    number: "10",
+    number: "11",
     title: "Todo-React",
     stack: "React · json-server · localStorage",
     status: "experiment",
@@ -143,7 +154,7 @@ export const projects: Project[] = [
   },
   {
     id: "kropp-fitness",
-    number: "11",
+    number: "12",
     title: "Kropp Fitness",
     stack: "HTML · CSS",
     status: "experiment",
@@ -154,7 +165,7 @@ export const projects: Project[] = [
   },
   {
     id: "skrekkeparken",
-    number: "12",
+    number: "13",
     title: "Skrekkeparken",
     stack: "JavaScript · HTML · CSS · Leaflet.js",
     status: "shipped",
@@ -165,7 +176,7 @@ export const projects: Project[] = [
   },
   {
     id: "2048",
-    number: "13",
+    number: "14",
     title: "2048 Game",
     stack: "JavaScript · HTML · CSS",
     status: "experiment",
@@ -176,7 +187,7 @@ export const projects: Project[] = [
   },
   {
     id: "yatzy",
-    number: "14",
+    number: "15",
     title: "Yatzy Dice Game",
     stack: "JavaScript · HTML · CSS",
     status: "experiment",
@@ -187,7 +198,7 @@ export const projects: Project[] = [
   },
   {
     id: "date-time",
-    number: "15",
+    number: "16",
     title: "Date-Time Wallpaper",
     stack: "JavaScript · HTML · CSS",
     status: "experiment",
@@ -198,16 +209,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const plannedProjects: Project[] = [
-  {
-    id: "moderation-bot",
-    number: "16",
-    title: "MAR Moderation Bot",
-    stack: "Python · aiogram 3 · SQLite · DeepSeek · Next.js",
-    status: "planned",
-    devOnly: true,
-  },
-];
+export const plannedProjects: Project[] = [];
 
 const DEMO_HOSTS = ["vercel.app", "imporsgrunn.no"];
 
